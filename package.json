@@ -1,0 +1,15 @@
+{
+  "name": "exemplos-aula-backend-2025",
+  "version": "1.0.0",
+  "description": "projeto de exemplo JP",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Henrique",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
