@@ -1,6 +1,7 @@
 import express from "express"
+import { exercicio1 } from "./services/exercicios.js"
+
 const app = express()
-const port = 3000
 
 // app.get('/api/pessoa/:id/teste/:outroid', (req, res) => {
 
@@ -16,25 +17,33 @@ const port = 3000
 
 // })
 
-app.get('/exercicio1', (req, res) => {
-
-    const num1 = req.query.num1
-    const num2 = req.query.num2
-    const soma = (Number(num1) + Number(num2))
-    
-    res.status(200).send(`o resultado da soma de dois numeros inteiros é: ${soma}`)
-
-})
+app.get('/exercicio1',exercicio1)
 app.get('/exercicio2', (req, res) => {
 
-    const num1 = req.query.num1
-    const num2 = req.query.num2
-    const soma = (Number(num1) + Number(num2))
+    const valorHora = req.query.valorHora
+    const qtdeHora = req.query.qtdeHora
+    const salario = (Number(valorHora) * Number(qtdeHora))
     
-    res.status(200).send(`resultado: ${soma}`)
+    res.status(200).send(`O valor do salario que vai receber dia 30: ${salario}`)
 
 })
+app.get('/exercicio3', (req, res) =>{
+const p1 = req.query.p1
+const p2 = req.query.p2
+const p3 = req.query.p3
+const p4 = req.query.p4
+const p5 = req.query.p5
 
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`)
+const media = (((Number(p1)+Number(p2)+Number(p3)+Number(p4)+Number(p5))/5))
+
+res.status(200).send(`A media de peso das pessoas é ${media}`)
+})
+app.get('/exercicio4',(req, res) =>{
+
+  const c = req.query.c
+ 
+
+})
+app.listen(3000, () => {
+  console.log('Servidor rodando na porta 3000')
 })
