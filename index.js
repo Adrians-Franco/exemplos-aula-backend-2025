@@ -1,7 +1,8 @@
 import express from "express"
-import { exercicio1 } from "./services/exercicios.js"
+import { exercicio1Post, exercicio2Get } from "./controllers/exercicios.js"
 
 const app = express()
+app. use(express.json())
 
 // app.get('/api/pessoa/:id/teste/:outroid', (req, res) => {
 
@@ -17,33 +18,13 @@ const app = express()
 
 // })
 
-app.get('/exercicio1',exercicio1)
-app.get('/exercicio2', (req, res) => {
+app.post('/exercicio1',exercicio1Post)
+app.get('/exercicio2',exercicio2Get)
 
-    const valorHora = req.query.valorHora
-    const qtdeHora = req.query.qtdeHora
-    const salario = (Number(valorHora) * Number(qtdeHora))
-    
-    res.status(200).send(`O valor do salario que vai receber dia 30: ${salario}`)
+   
 
-})
-app.get('/exercicio3', (req, res) =>{
-const p1 = req.query.p1
-const p2 = req.query.p2
-const p3 = req.query.p3
-const p4 = req.query.p4
-const p5 = req.query.p5
 
-const media = (((Number(p1)+Number(p2)+Number(p3)+Number(p4)+Number(p5))/5))
 
-res.status(200).send(`A media de peso das pessoas é ${media}`)
-})
-app.get('/exercicio4',(req, res) =>{
-
-  const c = req.query.c
- 
-
-})
 app.listen(3000, () => {
   console.log('Servidor rodando na porta 3000')
 })
