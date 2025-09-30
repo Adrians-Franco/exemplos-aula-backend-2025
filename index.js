@@ -1,5 +1,5 @@
 import express from "express"
-import { exercicio1Post, exercicio2Get } from "./controllers/exercicios.js"
+import { exercicio1Post, exercicio2Post, exercicio3Post, exercicio4Post, exercicio5Post } from "./controllers/exercicios.js"
 
 const app = express()
 app. use(express.json())
@@ -19,9 +19,10 @@ app. use(express.json())
 // })
 
 app.post('/exercicio1',exercicio1Post)
-app.get('/exercicio2',exercicio2Get)
-
-   
+app.get('/exercicio2',exercicio2Post)
+app.post('/exercicio3',exercicio3Post)
+app.post('/exercicio4',exercicio4Post)
+app.post('/exercicio5',exercicio5Post)   
 
 
 
